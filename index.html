@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel ="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Tic Tac Toe</h1>
+        <p class="left-token">X</p>
+        <p class="right-token">O</p>
+    </header>
+
+    <!-- <div class="Score tally"></div>
+        <div class="X tally"></div>
+        <div class="O tally"></div> -->
+
+    
+    <table>
+        <tr>
+            <td class = "box top left" id="0"></td>
+            <td class = "box top center" id="1"></td>
+            <td class = "box top right" id="2"></td>
+        </tr>
+        <tr>
+            <td class = "box left" id="3"></td>
+            <td class = "box center" id="4"></td>
+            <td class = "box right" id="5"></td>
+        </tr>
+        <tr>
+            <td class = "box bottom left" id="6"></td>
+            <td class = "box bottom center" id="7"></td>
+            <td class = "box bottom right" id="8"></td>
+        </tr>
+    </table>
+
+    <button>Start</button>
+    <script src ="logic.js"></script>
+</body>
+</html>
