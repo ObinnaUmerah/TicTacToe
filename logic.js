@@ -8,49 +8,29 @@ const tracker = []
 const gameBoard = document.querySelectorAll(".box")
 console.log(gameBoard)
 console.log(gameBoard[0]);
-const start = document.querySelector(".button")
-const clickedBox = (event) => {
-    const id = event.target.id;
-    if (!tracker[id] && !Winner()) {
-      tracker[id] = currentPlayer;
-      event.target.innerText = currentPlayer;
-      let num = 0
-      console.log(tracker[num])
-      num++
-      
-    }
-    if(currentPlayer===x_mark){
-        currentPlayer = circle_mark
-    }
-    else{
-        currentPlayer = x_mark
-    }
-        tracker[id]
-    //I might have to put this at the top of the method
-    if(Winner()){
-        alert(currentPlayer + " is the winner!")
-        return;
-    }
+const restart = document.querySelector(".buttons")
 
-    if(Draw()){
-        return;
+const reset = () =>{
+    tracker.forEach((spot, i)=> {
+        tracker[i] = null;
+    })
+    
+    gameBoard.forEach((square)=>{
+        square.innerText = "";
+    })  
     }
-}
-
-gameBoard.forEach((square)=> {
-    square.addEventListener('click', clickedBox);
-});
-
+    
+restart.addEventListener("click", reset)
 
 
 const Winner = () =>{
     if(tracker[0]===currentPlayer){
         if(tracker[1] === currentPlayer && tracker[2] === currentPlayer){
-            reset()
             alert(currentPlayer + " is the winner!")
+            reset()
             
             return true;
-        }
+        } 
         if(tracker[3] === currentPlayer && tracker[6] === currentPlayer){
             alert(currentPlayer + " is the winner!")
             reset()
@@ -101,17 +81,54 @@ const Winner = () =>{
 
 
 }
+// if(Winner()){
+//     console.log("PICKLES!!!");
+//     alert(currentPlayer + " is the winner!")
+// }
+const clickedBox = (event) => {
 
+    
+    const id = event.target.id;
+    if (!tracker[id] && !Winner()) { 
+      tracker[id] = currentPlayer;
+      event.target.innerText = currentPlayer;
+      
+      
+    }
+    //I might have to put this at the top of the method
 
-const reset = () =>{
-tracker.forEach((spot, i)=> {
-    tracker[i] = null;
-})
+    if(Winner()){
+        return;
+    }
 
-gameBoard.forEach((square, i)=>{
-    square.innerText = "";
-})  
+    if(Draw()){
+        return;
+    }
+
+    if(currentPlayer === x_mark){
+        currentPlayer = circle_mark
+        alert("It's " + currentPlayer + "'s turn")
+    }
+    else{
+        currentPlayer = x_mark
+        alert("It's " + currentPlayer + "'s turn")
+    }
+    // if(!Winner()){
+    //     alert("It's " + currentPlayer + "'s turn")
+    // }
 }
+
+
+gameBoard.forEach((square)=> {
+    square.addEventListener('click', clickedBox);
+    
+});
+
+
+ 
+
+
+
 
 
 
