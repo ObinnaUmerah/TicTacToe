@@ -1,13 +1,8 @@
-const BOARDSIZE = 3;
-let gameActive = true;
-let gameState = ["","","","","","","","","",];
 const circle_mark= 'O';
 const x_mark = 'X';
 let currentPlayer = x_mark;
 const tracker = []
 const gameBoard = document.querySelectorAll(".box")
-console.log(gameBoard)
-console.log(gameBoard[0]);
 const restart = document.querySelector(".buttons")
 
 const reset = () =>{
@@ -19,7 +14,7 @@ const reset = () =>{
         square.innerText = "";
     })  
     }
-    
+
 restart.addEventListener("click", reset)
 
 
@@ -81,10 +76,6 @@ const Winner = () =>{
 
 
 }
-// if(Winner()){
-//     console.log("PICKLES!!!");
-//     alert(currentPlayer + " is the winner!")
-// }
 const clickedBox = (event) => {
 
     
@@ -95,7 +86,6 @@ const clickedBox = (event) => {
       
       
     }
-    //I might have to put this at the top of the method
 
     if(Winner()){
         return;
@@ -113,9 +103,7 @@ const clickedBox = (event) => {
         currentPlayer = x_mark
         alert("It's " + currentPlayer + "'s turn")
     }
-    // if(!Winner()){
-    //     alert("It's " + currentPlayer + "'s turn")
-    // }
+    
 }
 
 
@@ -123,16 +111,6 @@ gameBoard.forEach((square)=> {
     square.addEventListener('click', clickedBox);
     
 });
-
-
- 
-
-
-
-
-
-
-
 
 const Draw = () =>{
     let tie = 0;
@@ -147,12 +125,6 @@ const Draw = () =>{
 
 
 }
-
-// function winningCombinations{
-//{ 0, 1, 2 }(done), { 3, 4, 5 }, { 6, 7, 8 }, // horizontal wins
-// { 0, 3, 6 }(done), { 1, 4, 7 }(done), { 2, 5, 8 }(done), // vertical wins
-// 	{ 0, 4, 8 }(done), { 2, 4, 6 }(done) // diagonal wins
-// }
 
 
 
