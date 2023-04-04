@@ -53,26 +53,6 @@ button{
     width: 100px;
 } 
 
-
-.left-token{
-    display: flex;
-    justify-content: left;
-    font-size: 30px;
-}
-
-.right-token{
-    display:flex;
-    justify-content: right;
-    font-size: 30px;
-    /* align-self: flex-end; */
-}
-
-.tally{
-    display: block;
-    text-align: center;
-    justify-content: space-around;
-}
-
 .X{
     background-color: red;
     margin: 25px;
